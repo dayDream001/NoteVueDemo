@@ -1,0 +1,23 @@
+{
+  "id": "2757483",
+  "name": "Day1",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-font",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2551720",
+      "name": "操作-详情",
+      "font_class": "xiangqing",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "11520613",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e765",
+      "unicode_decimal": 59237
+    }
+  ]
+}
