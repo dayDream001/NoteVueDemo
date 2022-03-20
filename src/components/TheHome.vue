@@ -2,7 +2,7 @@
     <el-container class="home-container">
       <el-header>
         <div class="div1">
-          <img src="../assets/img/logo.jpg"/>
+          <!--<img src="../assets/js/logo.png"/>-->
           <span style="margin-left: 10px;">XX管理系统</span>
         </div>
         <div>

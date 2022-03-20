@@ -1,22 +1,26 @@
 <template>
-  <el-form :model="loginForm" :rules="rules" ref="loginForm" label-position="left" label-width="0px"
-           class="demo-ruleForm login-container">
-    <h3 class="title">系统登录</h3>
-    <el-form-item prop="account">
-      <el-input type="text" v-model="loginForm.account" auto-complete="off" placeholder="账号" prop="account"
-                clearable></el-input>
-    </el-form-item>
-    <el-form-item prop="password">
-      <el-input type="password" v-model="loginForm.password" auto-complete="off" placeholder="密码" prop="password"
-                clearable></el-input>
-    </el-form-item>
-    <el-form-item style="width:100%;">
-      <el-button type="primary" style="width:47.5%;" @click.native.prevent="reset">重 置</el-button>
-      <el-button type="primary" style="width:47.5%;" @click.native.prevent="login" :loading="logining">登 录</el-button>
-    </el-form-item>
-  </el-form>
+  <div>
+    <div class="background"></div>
+    <div class="front">
+      <el-form :model="loginForm" :rules="rules" ref="loginForm" label-position="left" label-width="0px"
+               class="demo-ruleForm login-container">
+        <h3 class="title">系统登录</h3>
+        <el-form-item prop="account">
+          <el-input type="text" v-model="loginForm.account" auto-complete="off" placeholder="账号" prop="account"
+                    clearable></el-input>
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input type="password" v-model="loginForm.password" auto-complete="off" placeholder="密码" prop="password"
+                    clearable></el-input>
+        </el-form-item>
+        <el-form-item style="width:100%;">
+          <el-button type="primary" style="width:47.5%;" @click.native.prevent="reset">重 置</el-button>
+          <el-button type="primary" style="width:47.5%;" @click.native.prevent="login" :loading="logining">登 录</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
+  </div>
 </template>
-
 <script>
 import Cookies from 'js-cookie'
 
@@ -29,6 +33,7 @@ export default {
         account: 'admin',
         password: '123456'
       },
+      imgSrc: require('../assets/img/background.jpeg'),
       rules: {
         account: [
           {required: true, message: '请输入账号', trigger: 'blur'}
@@ -78,7 +83,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss">
+<style scoped lang="scss" >
   .login-container {
     background: #fff url("../assets/img/Login.png") no-repeat;
     -webkit-border-radius: 5px;
@@ -101,5 +106,31 @@ export default {
     margin: 0px 0px 35px 0px;
   }
 
+  }
+  .background{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-1;
+    zoom: 1;
+    background-color: #fff;
+    background: url(../assets/img/background.jpeg) no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+  }
+
+  .front{
+    z-index:1;
+    position: absolute;
+    border-radius: 10px;
+    width: 450px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
   }
 </style>
